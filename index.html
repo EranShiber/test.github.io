@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <link rel="stylesheet" href="main.css">
+    <title>Document</title>
+</head>
+<body>
+    <!-- top -->
+    <div class="top">
+        <div class="budget-container">
+        <div class="budget-title">Available Budget this month</div>
+        <div class="budget-income"> - </div>
+        <div class="budget-outcome"> - </div>
+    </div>
+    </div>
+    <!-- input area -->
+    <div class="add">
+        <select class="type">
+            <option value="inc"> + </option>
+            <option value="exp"> - </option>
+        </select>
+        <input class="input_desc" type="text" placeholder="Add description">
+        <input class="input_value" placeholder="Value">
+        <button class="btnSubmit">Add</button>
+    </div>
+    <!-- bottom -->
+    <div class="bot">
+        <div class="exp">
+            <h2>Expenses</h2>
+            <ul class="exp-ul">
+
+            </ul>
+        </div>
+        <div class="income">
+            <h2>Income</h2>
+            <ul class="inc-ul">
+
+            </ul>
+        </div>
+    </div>
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
