@@ -1,24 +1,24 @@
-* {
+*,*::before,*::after {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;   
 }
 
 body {
     height: 100vh;
-   
-    font-family: Open;
+    font: 400 40px/1.5 Helvetica, Verdana, sans-serif;
+
 }
 .top {
     color: white;
     font-weight: bold;
-    background-image: url("back.png");
-    background: linear-gradient(#8f7878, #9198e5ca),url("back.png");
+    background: linear-gradient(#8f7878, #9198e5ca), url("back.png") no-repeat;
     letter-spacing: 2px;
     text-align: center;
-    height: 22vw;
-    padding-top: 8%;
+    height: 28vw;
+    padding-top: 3%;
     font-size: 25px;
-    clip-path: polygon(100% 0%, 100% 0, 100% 100%, 100% 90%, 0 100%, 0% 100%, 0 0);
+    /* clip-path: polygon(20% 5%, 100% 0, 100% 100%, 100% 90%, 0 100%, 0% 100%, 0 0); */
     
 }
 
@@ -46,7 +46,8 @@ body {
 }
 
 .add {
-
+    position: relative;
+    top: -40px;
     padding: 25px;
     display: block;
     height: 5vw;
@@ -54,12 +55,78 @@ body {
     background-color: whitesmoke;
 }
 
-.bot{
-    display: flex;
-    justify-content: center;
-    padding: 20px;
+
+input {
+    padding: 10px 20px;
+    border: none;
+    border-bottom-right-radius: 1px solid black;
+    
 }
 
-.exp {
-padding-right: 30%;
+input:focus {
+    border-color: rgb(44, 184, 177);
+}
+
+select {
+    width: 60px;
+    font-size: 25px;
+    -webkit-appearance: none;
+    appearance: none;
+    background: url("http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png") white no-repeat 90.5% !important; /* !important used for overriding all other customisations */
+    border-radius: 4px;
+}
+
+.btnSubmit {
+border: none;
+font-size: 20px;
+
+}
+
+select:focus {
+    border-bottom: 1px solid #ccc;
+}
+
+.bot{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.vl {
+    border-left: 4px solid #dfd5d586;;
+    height: 100vw; 
+}
+
+ul {
+    display: inline-block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 30vw;
+    font-size: 20px;
+
+}
+
+.newLi {
+    border-bottom: 1px solid #ccc;
+}
+.newLi:hover {
+    background: #dfd5d586;
+    border-radius: 8px;
+    border-bottom: 4px solid #dfd5d586;;
+}
+
+li:last-child {
+    border: none;
+}
+
+
+.editBtn {
+    float: right;
+    color: rebeccapurple;
+    
+}
+.deleteBtn {
+   float: right;
+    color: rebeccapurple;
 }
