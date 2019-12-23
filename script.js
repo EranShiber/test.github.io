@@ -42,7 +42,6 @@ let type = document.querySelector(".type").value
       // deleting Li, and changing to totalsum + total expenses.
       deleteBtn.onclick = function(id) {
        this.parentNode.remove();
-       console.log(parseInt(this.parentNode.innerHTML.match(/\d+/)[0]));
        sumTotal = sumTotal - parseInt(this.parentNode.innerHTML.match(/\d+/)[0]);
        budgetSum.innerHTML = sumTotal
        incTotal = incTotal - parseInt(this.parentNode.innerHTML.match(/\d+/)[0]);
@@ -92,8 +91,6 @@ let type = document.querySelector(".type").value
     li.appendChild(editBtn);
     expUl.appendChild(li);
 
-
-    
     li.id = todoId;
     todoId++
     
