@@ -31,7 +31,6 @@ body {
 .budget-income {
     color: white;
     padding: 7px 0;
-    margin: 20px 0;
     border-radius: 4px;
     box-shadow: -5px 3px 4px rgba(0, 0, 0, 0.329);
     background-color: rgb(149, 218, 149);
@@ -53,12 +52,22 @@ h2 {
 .budget-outcome {
     color: white;
     padding: 7px 0;
-    margin: 20px 0;
+    margin: 5px 0;
     border-radius: 4px;
     box-shadow: -5px 3px 4px rgba(0, 0, 0, 0.329);
     background-color: rgb(200, 52, 52);
 }
 
+
+.chip{
+	padding: 8px 10px;
+	border-radius: 10px;
+	font-weight: 600;
+	font-size: 12px;
+	box-shadow: 0 2px 5px rgba(0,0,0,.25);
+	margin: 0 10px;
+	cursor: pointer;
+}
 .add {
     position: relative;
     top: -40px;
@@ -76,6 +85,7 @@ input {
     border-bottom-right-radius: 1px solid black;
     box-shadow: 0 3px 0 #ccc, 0 -1px #fff inset;
     border-radius: 3px;
+    outline: none;
 }
 
 input:focus {
