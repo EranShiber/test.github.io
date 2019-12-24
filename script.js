@@ -1,6 +1,7 @@
 const btn = document.querySelector(".btnSubmit");
 const expUl = document.querySelector(".exp-ul");
 const incUl = document.querySelector(".inc-ul");
+const form = document.querySelector('form');
 // const bot = document.querySelector(".bot")
 
 const budgetSum = document.querySelector(".budget-title");
@@ -17,14 +18,18 @@ let incTotal = null;
 let todoId = 0;
 
 // main function:
-btn.addEventListener("click", () => {
+form.addEventListener("submit", (x) => {
+x.preventDefault();
 
 // getting the values from html:
 let desc = document.querySelector(".input_desc").value;
 let value = document.querySelector(".input_value").value;
 let type = document.querySelector(".type").value
-
-   if(type === "inc") {
+if(desc === "" && value === ""){
+  console.log('bad');
+  
+} else {
+  if(type === "inc") {
 
     todoId++
     incTotal += parseInt(value);
@@ -34,48 +39,42 @@ let type = document.querySelector(".type").value
     budgetSum.innerHTML = sumTotal
     let li = document.createElement("li");
     let deleteBtn = document.createElement("button");
-    let editBtn = document.createElement("button");
       li.id = todoId;
-      editBtn.className = "editBtn";
+      deleteBtn.className = "deleteBtn";
 
   
       // deleting Li, and changing to totalsum + total expenses.
-      deleteBtn.onclick = function(id) {
+      deleteBtn.onclick = function() {
        this.parentNode.remove();
        sumTotal = sumTotal - parseInt(this.parentNode.innerHTML.match(/\d+/)[0]);
        budgetSum.innerHTML = sumTotal
        incTotal = incTotal - parseInt(this.parentNode.innerHTML.match(/\d+/)[0]);
        budgetHeadlineInc.innerHTML = incTotal;
-       
 
       }
-      editBtn.innerHTML = `Edit`
-      deleteBtn.innerHTML = `Remove`
+
+    deleteBtn.innerHTML = `Remove`
     li.className = "newLi";
     li.innerHTML = `Description: ${desc} was: ${value}₪`
-
-
     desc.innerHTML = ""
     value.innerHTML = ""
     li.appendChild(deleteBtn);
-    li.appendChild(editBtn);
     incUl.appendChild(li);
    }
+
    else {
-      
     expTotal -= parseInt(value);
     sumTotal -= parseInt(value);
 
     budgetHeadlineOut.innerHTML = expTotal;
     let li = document.createElement("li");
     li.className = "newLi";
-    li.innerHTML = `Description:<br/> ${desc} was: ${value - value * 2}₪`
+    li.innerHTML = `Description: ${desc} was: ${value - value * 2}₪`
 
     let deleteBtn = document.createElement("button");
-    let editBtn = document.createElement("button");
+    deleteBtn.className = "deleteBtn";
 
       li.id = todoId;
-      editBtn.className = "editBtn";
 
       // deleting Li, and changing to totalsum + total expenses.
       deleteBtn.onclick = function(id) {
@@ -86,18 +85,18 @@ let type = document.querySelector(".type").value
        budgetHeadlineOut.innerHTML = expTotal;
 
       }
+
+
       
-      editBtn.innerHTML = `Edit`
-      deleteBtn.innerHTML = `Remove`
+    deleteBtn.innerHTML = `Remove`
     li.className = "newLi";
-    li.innerHTML = `Description: ${desc} was: ${value}₪`
+    li.innerHTML = `Description:                      ${desc} was: ${value}₪`
     li.appendChild(deleteBtn);
-    li.appendChild(editBtn);
     expUl.appendChild(li);
     
     li.id = todoId;
     todoId++
-
+    }
    }    
    budgetSum.innerHTML = `${sumTotal}₪`; 
    document.querySelector(".input_desc").value = '';
